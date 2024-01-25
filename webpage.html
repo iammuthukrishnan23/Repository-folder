@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKZ Explore Global</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --maincolor:#163235;
+    --secondclr:#4468E2;
+    --thirdcolor:#1C4961;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    padding: 2rem 7%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 100000;
+    background-color: white;
+}
+.header #logo{
+    color: black;
+    font-size: 3rem;
+}
+.header #logo span{
+    color: var(--secondclr);
+}
+.navbar a{
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    color: var(--maincolor);
+}
+.navbar a:hover{
+    color: var(--secondclr);
+}
+.navbar.active{
+    left: 0;
+}
+.icons #menu-bars{
+    font-size: 2rem;
+    color: black;
+    display: none;
+
+}
+.icons #menu-bars:hover{
+  color: #4468E2;
+}
+.background-image{
+    position: relative;
+    background: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-image{
+    display: flex;
+    flex-direction: column;
+}
+.background-image h1{
+    font-size: 50px;
+    color: white;
+}
+.background-image h1 span{
+    color: var(--secondclr);
+}
+.background-image p{
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+}
+.background-image a{
+    padding: 1.5rem 2rem;
+    color: white;
+    font-size: 1.5rem;
+    background: var(--secondclr);
+
+}
+.background-image a:hover{
+    transform: scaleY(1.1);
+    letter-spacing: 2px;
+    border-radius: 15px;
+}
+
+
+.our-services{
+    padding: 2rem 7%;
+
+}
+.our-services h1{
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+.our-services h1 span{
+    color: var(--secondclr);
+}
+.main-services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.main-services .inner-service{
+    flex: 1 1 200px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.inner-icons img{
+    width: 50px;
+    padding: 1.5rem 0;
+}
+.inner-service h2{
+    font-size: 2rem;
+    color: black;
+    padding: .5rem;
+}
+.inner-service h2 span{
+    color: var(--secondclr);
+}
+
+.inner-service p{
+    color: var(--secondclr);
+    font-size: 1.5rem;
+    padding: 0;
+    text-align: left;
+}
+.recomended-destination{
+    padding: 3rem 7%;
+}
+.recomended-destination h1{
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    padding: 1rem 0;
+}
+.recomended-destination h1 span{
+    color: var(--secondclr);
+}
+.recomended-destination h1 span:hover{
+    letter-spacing: 4px;
+}
+.main-destination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.main-destination .inner-destination{
+    flex: 280px;
+}
+.main-destination .inner-destination .main-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+.inner-destination h2{
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.inner-destination p{
+    font-size: 1.5rem;
+}
+.dist-icons{
+    margin-left: 1rem;
+}
+
+.our-blog{
+    padding: 3rem 7%;
+}
+.our-blog h1{
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+.our-blog h1 span{
+    color: var(--secondclr);
+}
+.our-blog h1 span:hover{
+    letter-spacing: 3px;
+}
+
+.mian-blog{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.inner-blog{
+    flex: 1 1 45rem;
+}
+.inner-blog img{
+    width: 100%;
+    
+}
+.blog-images img{
+    height: 175px;
+}
+.reviews{
+    padding: 3rem 7%;
+}
+
+.reviews h1{
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    padding: 1.5rem 0;
+}
+.reviews h1 span{
+    color: var(--secondclr);
+}
+.mian-review{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.inner-review{
+    flex: 1 1 45rem;
+    padding: 2rem 4rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.inner-review p{
+    font-size: 1.5rem;
+}
+.review-client{
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+.review-client span{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+    color: var(--secondclr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    html{
+        font-size: 55%;
+    }
+    .icons #menu-bars{
+        display: initial;
+    
+    }
+    .header{
+        padding: 2rem;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        right: 0;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.5rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+
+
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer-con{
+    max-width: 1170px;
+    
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer{
+    background-color: black;
+    padding: 70px 0;
+
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+
+}
+
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-transform: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .f-social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .f-social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: black;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+</style>
+<body>
+    
+<header class="header">
+    <a href="#" id="logo"><b>AKZ <span>Explore Global</span></b></a>
+
+    <nav class="navbar">
+       <B> <a href="#">HOME</a>
+        <a href="#">TRAVEL</a>
+        <a href="#">PACKAGES</a>
+        <a href="#">HONEYMOON</a>
+        <a href="#">GROUP TOURS</a>
+        <a href="#">CONTACT</a></B>
+    </nav>
+<div class="icons">
+    <a href="#" id="menu-bars" class="fas fa-bars"></a>
+</div>
+
+</header>
+
+<!-- background image -->
+
+<div class="background-image">
+    <h1>travel to <span>explore</span></h1>
+    <p>TRAVEL BECAUSE LIFE IS SHORT, AND THE WORLD IS HUGE.</p>
+    <a href="#">read more</a>
+</div><br>
+
+<div class="our-services">
+    <h1>Welcome To  <span>AKZ Explore Global</span></h1>
+    <div class="main-services">
+
+        <div class="inner-service">
+            <div class="inner-icons">
+                
+            </div>
+            <p> <b>AKZ Explore Global. Ltd is a subsidiary of AKZ Group of Hotels, one of the biggest hotel chains in south Tamil Nadu. The AKZ Group of Hotels founded in 1998 has for forty years provided impeccable service and outstanding hospitality. It currently has 19 properties in Tamil Nadu. AKZ Explore Global Pvt. Ltd built on this strong foundation aims to provide great customer satisfaction and an exemplary holiday experience. Planning a once in a lifetime holiday or a yearly corporate retreat? No problem! AKZ Explore Global can get you what you want and in the minimal time. One of the best destination management companies in South India, it has the experience and infrastructure to handle any customer demand. In addition to destination management, AKZ Explore Global also plans corporate tours, incentive trips, college/school excursions, business travel, arranges car/railway & hotel bookings and much, much more.
+                Discover what makes AKZ Explore Global and its offerings distinct from the rest of the pack and indispensable to its customers.</p></b>
+       
+        </div>
+    </div>
+</div>
+
+
+<!-- our service -->
+
+<div class="our-services">
+    <h1>Our <span>services</span></h1>
+    <div class="main-services">
+
+        <div class="inner-service">
+            <div class="inner-icons">
+                
+            </div>
+            <i class='fas fa-users' style='font-size:48px;color: #4468E2;'></i>
+            <h2>30,000+ <span>Abroad</span> Trips</h2>
+            <p> <b>For the last decade, GT Holidays have organized more than 30,000 international itineraries.</p></b>
+       
+        </div>
+
+        <div class="inner-service">
+            <div class="inner-icons">
+
+            </div>
+            <i class='fas fa-map-marker-alt' style='font-size:48px;color:#4468E2'></i>
+            <h2>Handcrafted<span> Experiences</span> </h2>
+            <p> <b>Each and every itinerary is customized according to the taste of the customers.</p></b>
+       
+        </div>
+
+        <div class="inner-service">
+            <div class="inner-icons">
+                <i class='fas fa-street-view' style='font-size:48px;color:#4468E2'></i>
+            </div>
+            <div><h2>96% <span>Happy</span> Travelers</h2>
+            <p><b>AKZ Explore Global holds record of 96% customer satisfaction and all customers are retained with us.</p></b>
+       
+        </div>
+
+        
+
+
+    </div>
+</div>
+
+<!-- our service  ended-->
+<!-- Destinations -->
+<div class="recomended-destination">
+    <h1>recomended <span>destination</span></h1>
+<div class="main-destination">
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/taj.jpg" alt="">
+    </div>
+    
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> Tajmahal</h2>
+    <p>Every couple's favourite destination that offers some of the most romantic place</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/mal.jpg" alt="">
+    </div>
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> Maldives Island</h2>
+    <p>A relaxed getaway surrounded by the blue sea & pristine beaches.</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/desti1 (3).png" alt="">
+    </div>
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> London, Paris</h2>
+    <p>Every couple's favourite destination that offers some of the most romantic place.</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/italy.jpg" alt="">
+    </div>
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> Italy</h2>
+    <p>Artwork, crumbling wrecks, and majestic palaces dot the horizon.</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/sin.jpg" alt="">
+    </div>
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> Singapore</h2>
+    <p>Explore the modern architecture and diverse culture of the Lion City.</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+
+<div class="inner-destination">
+    <div class="main-image">
+        <img src="images/china.jpg" alt="">
+    </div>
+    <h2><i class='fas fa-map-marker-alt' style='font-size:18px'>  </i> China</h2>
+    <p>Explore the land of many mysteries and secrets and sacred temples and imperial palaces from architectural marvels to stunning treditional buildings.</p>
+    <div class="dist-icons">
+        <i class='fas fa-plane-departure' style='font-size:24px'></i>
+        <i class='fas fa-hotel' style='font-size:24px'></i>
+        <i class='fas fa-utensils' style='font-size:24px'></i>
+    </div>
+</div>
+</div>
+</div>
+<!-- Destinations ended -->
+<div class="our-blog">
+    <h1>our <span>blog</span></h1>
+    <div class="mian-blog">
+
+        <div class="inner-blog">
+            <img src="images/blog1.png" alt="">
+        </div>
+
+        
+        <div class="inner-blog blog-images">
+            <img src="images/blog2.png" alt="">
+            <img src="images/blog3.png" alt="">
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<!-- customer review -->
+
+<div class="reviews">
+    <h1>happy <span>customer</span></h1>
+    <div class="mian-review">
+        <div class="inner-review">
+            <p>Everything was as assured at the time of booking and had a hassle free enjoyable trip. Paisa vasool trip Ocean Villa night. All over good experience great work nice resort highly recommend.</p>
+            
+            <div class="review-client">
+                <img src="images/jtss1.png" alt="">
+                <span>JTS Akhil</span>
+            </div>
+        </div>
+
+
+        <div class="inner-review">
+            <p>It was really a Wonderful experience. Ur Website had made a complete support for us throughout the Trip. It was safe & enjoyable. I'll prefer to everyone.</p>
+            
+            <div class="review-client">
+                <img src="images/tk1.png" alt="">
+                <span>Tamil Trekker</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">privacy and Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Payment options</a></li> 
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Branches</h4>
+                <ul>
+                    <li><a href="#">Hyderabad</a></li> <li><a href="#">Tirunelveli</a></li>
+                    <li><a href="#">Bangalore</a></li>  <li><a href="#">Trichy</a></li>
+                    <li><a href="#">Chennai</a></li>  <li><a href="#">Nagercoil</a></li>
+                    <li><a href="#">Coimbatore</a></li>  <li><a href="#">Kanyakumari</a></li>
+                    <li><a href="#">Erode</a></li>  <li><a href="#">Kochi</a></li>
+                    <li><a href="#">Madurai</a></li> <li><a href="#">Thiruvananthapuram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                <i class='bx bxl-youtube' style="font-size: 30px; color: #ffffff;"></i>
+                    <i class='bx bxl-facebook' style="font-size: 30px; color: #ffffff;"></i>
+                    <i class='bx bxl-instagram' style="font-size: 30px; color: #ffffff;"></i>
+                    <i class='bx bxl-twitter' style="font-size: 30px; color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<hr>
+
+ <center>
+    <h2> <b>Copyright © 2023 by AKZ Explore Global Pvt Ltd. All Rights Reserved.</b> </h2>
+ </center>
+
+
+</body>
+</html>
